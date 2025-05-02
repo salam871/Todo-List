@@ -1,0 +1,62 @@
+@use '../utils/_variables.scss';
+
+#todo-list{
+    margin-bottom: 10px;
+    padding: 0 16px;
+    background-color: variables.$primary;
+    border-radius: 15px;
+    
+
+    &__item{
+        display: flex;
+        align-items: center;
+
+        &__text{
+            padding: 15px;
+            padding-right: 0;
+            flex-grow: 1;
+            transition: 200ms ease;
+        }
+
+        &__delete{
+            padding: 3px;
+            background: red;
+            border: none;
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        &__done{
+            border: 2px solid variables.$accent-color;
+            border-radius: 50%;
+            min-height: 20px;
+            min-width: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+            transition: 200ms ease;
+            cursor: pointer;
+        }
+        &--checkbox{
+            display: none;
+        }
+
+        &--checkbox:checked ~ &__done{
+            background-color: variables.$accent-color;
+            & svg{
+                fill: variables.$primary;
+            }            
+        }
+        
+        &--checkbox:checked ~ &__text{
+            text-decoration: line-through;
+            color: variables.$secondary;
+        }
+    }
+}
+
+

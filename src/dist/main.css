@@ -1,0 +1,146 @@
+form {
+  position: relative;
+  display: inline-block;
+}
+form #todo-input {
+  box-sizing: border-box;
+  padding: 12px 20px;
+  width: 100%;
+  background: none;
+  border: 2px solid #4a4d57;
+  border-radius: 1000px;
+  font: inherit;
+  color: #f9f9f9;
+  caret-color: #00ffc4;
+}
+form #todo-input:focus {
+  outline: none;
+}
+form #add-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #00ffc4;
+  height: 100%;
+  padding: 0 30px;
+  border: none;
+  border-radius: 1000px;
+  font: inherit;
+  font-weight: 600;
+  color: #101114;
+  cursor: pointer;
+}
+
+@media (max-width: 500px) {
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  form #add-btn {
+    position: unset;
+    width: 100%;
+    margin-top: 10px;
+    padding: 15px;
+    height: auto;
+  }
+}
+#todo-list {
+  margin-bottom: 10px;
+  padding: 0 16px;
+  background-color: #1c1d20;
+  border-radius: 15px;
+}
+.todo-list__item {
+  display: flex;
+  align-items: center;
+}
+#todo-list__item__text {
+  padding: 15px;
+  padding-right: 0;
+  flex-grow: 1;
+  transition: 200ms ease;
+}
+.todo-list__item__delete {
+  padding: 3px;
+  background: red;
+  border: none;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+#todo-list__item__done {
+  border: 2px solid #00ffc4;
+  border-radius: 50%;
+  min-height: 20px;
+  min-width: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  transition: 200ms ease;
+  cursor: pointer;
+}
+.todo-list__item--checkbox {
+  display: none;
+}
+.todo-list__item--checkbox:checked ~ #todo-list__item__done {
+  background-color: #00ffc4;
+}
+.todo-list__item--checkbox:checked ~ #todo-list__item__done svg {
+  fill: #1c1d20;
+}
+.todo-list__item--checkbox:checked ~ #todo-list__item__text {
+  text-decoration: line-through;
+  color: #4a4d57;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16pt;
+  box-sizing: border-box;
+  color: #f9f9f9;
+}
+
+body {
+  min-height: 100vh;
+  padding: 10px;
+  background-color: #101114;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  margin: 100px 0 20px 0;
+  font-size: 3rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-align: center;
+  color: #00ffc4;
+}
+
+.wrapper {
+  width: 700px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+@media (max-width: 500px) {
+  html {
+    font-size: 12pt;
+  }
+  h1 {
+    margin-top: 50px;
+    font-size: 15vw;
+  }
+}/*# sourceMappingURL=main.css.map */
